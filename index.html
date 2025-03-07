@@ -11,32 +11,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             height: 100vh;
             background-image: url('https://img.freepik.com/premium-photo/painting-boy-girl-holding-hands-girl-holding-hands_1013369-65344.jpg');
-            background-size: cover;
+            background-size: 30%; /* Made smaller */
             background-position: center;
+            background-repeat: no-repeat;
         }
 
         .player-container {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 20px;
+            padding: 5px; /* Reduced padding */
+            border-radius: 15px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 5px; /* Reduced gap */
+            width: 150px; /* Made smaller */
         }
 
         h2 {
             color: white;
             background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
+            padding: 3px; /* Reduced padding */
             border-radius: 10px;
+            font-size: 10px; /* Made smaller */
         }
 
         audio {
-            margin-top: 10px;
-            width: 300px;
+            width: 100px; /* Made smaller */
         }
     </style>
 </head>

@@ -59,8 +59,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('backgroundMusic');
+            
+            // Attempt to play immediately
             audio.play().catch(error => {
-                console.log('Autoplay blocked by browser. User interaction needed.');
+                console.log('Autoplay blocked, trying again after a delay.');
+
+                // Try playing again after a short delay
+                setTimeout(() => {
+                    audio.play().catch(err => console.log('Still blocked:', err));
+                }, 2000);
             });
         });
     </script>

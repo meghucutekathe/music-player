@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Surprise</title>
+    <title>"Last song you sang"</title>
     <style>
         body {
             margin: 0;
@@ -11,33 +11,51 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             background-image: url('https://img.freepik.com/premium-photo/painting-boy-girl-holding-hands-girl-holding-hands_1013369-65344.jpg');
             background-size: cover;
             background-position: center;
         }
 
+        .player-container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
         audio {
-            display: none;
+            margin-top: 10px;
+            width: 300px;
         }
     </style>
 </head>
 <body>
-
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="https://files.catbox.moe/hbykg5.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
+    <div class="player-container">
+        <h2>🎵"Last song you sang"🎵</h2>
+        <audio id="backgroundMusic" controls autoplay loop>
+            <source src="https://files.catbox.moe/hbykg5.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
     <script>
-        // Ensuring autoplay works
         document.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('backgroundMusic');
             audio.play().catch(error => {
-                console.log('Autoplay failed:', error);
+                console.log('Autoplay blocked by browser. User interaction needed.');
             });
         });
     </script>
-
 </body>
 </html>

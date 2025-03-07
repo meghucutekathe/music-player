@@ -1,75 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Last song you sang"</title>
+    <title>HACKED!</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('https://img.freepik.com/premium-photo/painting-boy-girl-holding-hands-girl-holding-hands_1013369-65344.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            aspect-ratio: 16 / 9;
-        }
-
-        .player-container {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 15px; /* Increased padding */
-            border-radius: 15px;
+            background-color: black;
+            color: green;
+            font-family: 'Courier New', monospace;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            gap: 10px; /* Increased gap */
-            width: 300px; /* Increased size */
+            font-size: 40px;
+            padding-top: 20%;
+            animation: fadeIn 2s ease-in-out;
         }
-
-        h2 {
+        .countdown {
+            font-size: 50px;
+            color: red;
+            margin-top: 20px;
+            animation: pulse 1s infinite alternate;
+        }
+        .hint {
+            font-size: 60px;
+            color: red;
+            opacity: 0;
+            animation: blink27 1s ease-in-out 2;
+        }
+        @keyframes blink27 {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        .slides {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .arrow {
+            width: 0; 
+            height: 0; 
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-top: 50px solid yellow;
+            animation: bounce 1s infinite;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+        }
+        .fight-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .fight-button {
+            font-size: 30px;
+            padding: 10px 20px;
             color: white;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px; /* Increased padding */
-            border-radius: 10px;
-            font-size: 14px; /* Increased size */
-        }
-
-        audio {
-            width: 200px; /* Increased size */
+            background-color: red;
+            border: none;
+            cursor: pointer;
+            animation: pulse 1s infinite alternate;
         }
     </style>
 </head>
 <body>
-    <div class="player-container">
-        <h2>🎵"Last song you sang"🎵</h2>
-        <audio id="backgroundMusic" controls autoplay loop>
-            <source src="https://files.catbox.moe/hbykg5.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <div id="slide1" class="slides active">
+        <h1>█ █ █ H A C K E D █ █ █</h1>
+        <p>YOUR DEVICE HAS NOT BEEN COMPROMISED!</p>
+        <div class="countdown" id="countdown">5</div>
+        <div class="hint">27</div>
     </div>
-    
+    <div id="slide2" class="slides">
+        <h1>Do you recognize this m*sks?No u dont!!</h1>
+        <p>🎭</p>
+    </div>
+    <div id="slide3" class="slides">
+        <h1>Weapon loaded (ง ͠° ͟ʖ#)ง  </h1>
+        <p>🔫</p>
+    </div>
+    <div id="slide4" class="slides">
+        <h1>Kidnapped? Who?!</h1>
+    </div>
+    <div id="slide5" class="slides">
+        <h1>Just kidding, Meghu! 😜</h1>
+        <p>Just click on the button on the next slide</p>
+    </div>
+    <div id="slide6" class="slides">
+        <h1>Time for a fun fight! 🥊</h1>
+        <div class="arrow"></div>
+        <div class="fight-container">
+            <button class="fight-button" onclick="startFight()">LET'S FIGHT</button>
+        </div>
+    </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const audio = document.getElementById('backgroundMusic');
-            
-            // Attempt to play immediately
-            audio.play().catch(error => {
-                console.log('Autoplay blocked, trying again after a delay.');
+        let slides = document.querySelectorAll('.slides');
+        let currentSlide = 0;
 
-                // Try playing again after a short delay
-                setTimeout(() => {
-                    audio.play().catch(err => console.log('Still blocked:', err));
-                }, 2000);
-            });
-        });
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide++;
+            if (currentSlide < slides.length) {
+                slides[currentSlide].classList.add('active');
+                setTimeout(showNextSlide, 3000);
+            }
+        }
+        setTimeout(showNextSlide, 3000);
+
+        function startFight() {
+            window.location.href = "https://www.tickcounter.com/countdown/6799449/we-never-fight-we-just-love";
+        }
     </script>
 </body>
 </html>

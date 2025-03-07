@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
+    <title>Special Surprise</title>
     <style>
         body {
             margin: 0;
@@ -12,37 +12,32 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('https://image.telanganatoday.com/wp-content/uploads/2023/12/Husn_V_png--442x260-4g.webp?sw=412&dsz=442x260&iw=412&p=false&r=2.625') no-repeat center center/cover;
-        }
-
-        .player-container {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/painting-boy-girl-holding-hands-girl-holding-hands_1013369-65344.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        h2 {
-            color: white;
-            font-family: Arial, sans-serif;
+            display: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="player-container">
-        <h2>🎵 Now Playing: Husn 🎵</h2>
-        <audio controls autoplay>
-            <source src="https://files.catbox.moe/hbykg5.mp3" type="audio/mpeg">
-            Your browser does not support the audio tag.
-        </audio>
-    </div>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="https://files.catbox.moe/hbykg5.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Ensuring autoplay works
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('backgroundMusic');
+            audio.play().catch(error => {
+                console.log('Autoplay failed:', error);
+            });
+        });
+    </script>
 
 </body>
 </html>
